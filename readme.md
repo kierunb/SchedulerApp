@@ -1,4 +1,4 @@
-# POC of Rest Service with Scheduling and Message Queuing capbilities
+# POC of Rest Service with Scheduling and Message Queuing capabilities
 
 ### Technology used:
 - .NET Framework 4.7.x
