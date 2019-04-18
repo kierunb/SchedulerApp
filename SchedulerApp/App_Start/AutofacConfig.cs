@@ -35,17 +35,18 @@ namespace SchedulerApp.App_Start
             //builder.RegisterType<ToInject>().As<IToInject>();
 
             //register rebus
-            //builder.RegisterRebus((cnfg, context) => cnfg
-            //    .Logging(l => l.None())
-            //    .Transport(t => t.UseMsmq("jobs-queue"))
-            //    .Routing(r => r.TypeBased().MapAssemblyOf<Messages.HelloMessage>("producer"))
-            //    .Options(o => {
-            //        o.SetNumberOfWorkers(2);
-            //        o.SetMaxParallelism(30);
-            //    }));
+            builder.RegisterRebus((cnfg, context) => cnfg
+                .Logging(l => l.None())
+                .Transport(t => t.UseMsmq("jobs-queue"))
+                .Routing(r => r.TypeBased().MapAssemblyOf<Messages.HelloMessage>("producer"))
+                .Options(o =>
+                {
+                    o.SetNumberOfWorkers(2);
+                    o.SetMaxParallelism(30);
+                }));
 
-            //builder.RegisterHandler<HelloMessageHandler>();
-            //builder.RegisterHandlersFromAssemblyOf<HelloMessageHandler>();
+            builder.RegisterHandler<HelloMessageHandler>();
+            builder.RegisterHandlersFromAssemblyOf<HelloMessageHandler>();
 
 
             // Set the dependency resolver to be Autofac.
