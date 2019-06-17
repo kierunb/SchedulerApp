@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace SchedulerApp.Messages
 {
-    public class HelloMessage
+    public class ReplyMessage
     {
         public string Message { get; set; }
-        public string Originator { get; set; }
-    }
-
-    public class HelloMessage2
-    {
-        public string Message { get; set; }
-        public string Originator { get; set; }
+        public string ProcessName { get; set; }
     }
 }

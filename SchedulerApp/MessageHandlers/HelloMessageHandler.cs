@@ -15,8 +15,25 @@ namespace SchedulerApp.MessageHandlers
         public async Task Handle(HelloMessage message)
         {
             await Task.Run(() => { });
-            BackgroundJob.Enqueue(() => Jobs.TestJob.Execute());
-            Debug.WriteLine($"message: {message.Message}, originator: {message.Originator}");
+            //BackgroundJob.Enqueue(() => Jobs.TestJob.Execute());
+            Debug.WriteLine($"Got It! {nameof(HelloMessage)}: {message.Message}, originator: {message.Originator}");
+        }
+    }
+
+    public class HelloMessageHandler2 : IHandleMessages<HelloMessage2>//, IHandleMessages<NotificationMessage>
+    {
+        public async Task Handle(HelloMessage2 message)
+        {
+            await Task.Run(() => { });
+            //BackgroundJob.Enqueue(() => Jobs.TestJob.Execute());
+            Debug.WriteLine($"Got It! {nameof(HelloMessage2)}: {message.Message}, originator: {message.Originator}");
+        }
+
+        public async Task Handle(NotificationMessage message)
+        {
+            await Task.Run(() => { });
+            //BackgroundJob.Enqueue(() => Jobs.TestJob.Execute());
+            Debug.WriteLine($"Got It! {nameof(NotificationMessage)}: {message.Notification}, originator: {message.ProcessName}");
         }
     }
 }

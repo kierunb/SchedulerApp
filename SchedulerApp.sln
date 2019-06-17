@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulerApp", "SchedulerApp\SchedulerApp.csproj", "{1653BCFB-B095-40CA-8823-4927CD0A2651}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageConsumer", "MessageConsumer\MessageConsumer.csproj", "{A17D6DBF-65BE-4394-872E-E309C5CE90EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{5018B3D6-CC9B-46AF-BAEC-0C59C36FC746}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5018B3D6-CC9B-46AF-BAEC-0C59C36FC746}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5018B3D6-CC9B-46AF-BAEC-0C59C36FC746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17D6DBF-65BE-4394-872E-E309C5CE90EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17D6DBF-65BE-4394-872E-E309C5CE90EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17D6DBF-65BE-4394-872E-E309C5CE90EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17D6DBF-65BE-4394-872E-E309C5CE90EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

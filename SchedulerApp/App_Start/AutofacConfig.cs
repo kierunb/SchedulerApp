@@ -5,6 +5,7 @@ using Rebus.Routing.TypeBased;
 using SchedulerApp.MessageHandlers;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -34,22 +35,10 @@ namespace SchedulerApp.App_Start
             // CUSTOM modules
             //builder.RegisterType<ToInject>().As<IToInject>();
 
-            //register rebus
-            builder.RegisterRebus((cnfg, context) => cnfg
-                .Logging(l => l.None())
-                .Transport(t => t.UseMsmq("jobs-queue"))
-                .Routing(r => r.TypeBased().MapAssemblyOf<Messages.HelloMessage>("producer"))
-                .Options(o => {
-                    o.SetNumberOfWorkers(2);
-                    o.SetMaxParallelism(30);
-                }));
-
-            builder.RegisterHandler<HelloMessageHandler>();
-            //builder.RegisterHandlersFromAssemblyOf<HelloMessageHandler>();
-
+            RebusConfig.ConfigureRebus(builder);
 
             // Set the dependency resolver to be Autofac.
-            var container = builder.Build();
+            var container = builder.Build(); 
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }

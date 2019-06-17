@@ -162,6 +162,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\HangfireConfig.cs" />
+    <Compile Include="App_Start\RebusConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ServiceModule.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
@@ -200,6 +201,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Jobs\TestJob.cs" />
+    <Compile Include="Jobs\TestJobWithNotification.cs" />
     <Compile Include="MessageHandlers\HelloMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
