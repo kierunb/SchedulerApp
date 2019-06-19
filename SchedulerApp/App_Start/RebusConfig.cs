@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace SchedulerApp.App_Start
 {
     public static class RebusConfig
@@ -23,14 +22,14 @@ namespace SchedulerApp.App_Start
             autofacContainerBuilder.RegisterRebus((config, context) => config
                 .Logging(l => l.ColoredConsole(minLevel: Rebus.Logging.LogLevel.Warn))
                 .Transport(t => t.UseSqlServer(connString, "consumer.input"))      // where to fetch
-                .Routing(r => r.TypeBased().MapAssemblyOf<NotificationMessage>("notifications"))
+                .Routing(r => r.TypeBased().Map<NotificationMessage>("notifications"))
                 .Options(o => {
                     //o.SetNumberOfWorkers(1);
                     //o.SetMaxParallelism(30);
                 }));
 
             // register message handlers
-            //autofacContainerBuilder.RegisterHandler<HelloMessageHandler>();
+            // autofacContainerBuilder.RegisterHandler<HelloMessageHandler>();
             autofacContainerBuilder.RegisterHandlersFromAssemblyOf<HelloMessageHandler>();
 
             // bus itself will be started when container will be built

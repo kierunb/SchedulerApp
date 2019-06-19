@@ -20,10 +20,6 @@ namespace MessageProducer
         {
             using (var activator = new BuiltinHandlerActivator())
             {
-                //adapter.Handle<HelloMessage>(async reply =>
-                //{
-                //    await Console.Out.WriteLineAsync($"Got reply '{reply.Message}' (from OS process {reply.Originator})");
-                //});
 
                 Configure.With(activator)
                     .Logging(l => l.ColoredConsole(minLevel: LogLevel.Info))
@@ -43,6 +39,9 @@ namespace MessageProducer
                             goto quit;
 
                         default:
+
+                            // send two messages of two types
+
                             activator.Bus
                                 .Send(new HelloMessage
                                 {

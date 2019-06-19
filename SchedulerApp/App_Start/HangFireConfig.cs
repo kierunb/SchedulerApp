@@ -13,17 +13,6 @@ namespace SchedulerApp.App_Start
     {
         public static void Configure(IAppBuilder app)
         {
-            //GlobalConfiguration.Configuration
-            //    .UseSqlServerStorage("hangfire-db", new SqlServerStorageOptions
-            //    {
-            //        CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
-            //        SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
-            //        QueuePollInterval = TimeSpan.Zero,
-            //        UseRecommendedIsolationLevel = true,
-            //        UsePageLocksOnDequeue = true,
-            //        DisableGlobalLocks = true
-            //    });
-
             GlobalConfiguration.Configuration
                 .UseSqlServerStorage("hangfire-db");
 
